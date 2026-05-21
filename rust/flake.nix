@@ -18,7 +18,7 @@
       rust-overlay,
     }:
     let
-      supportSystems = with flake-utils.lib; [
+      supportSystems = with flake-utils.lib.system; [
         x86_64-linux
         aarch64-darwin
       ];
@@ -31,7 +31,7 @@
           overlays = [ rust-overlay.overlays.default ];
         };
         rustToolchain = pkgs.rust-bin.stable.latest.default.override {
-          extentions = [
+          extensions = [
             "llvm-tools-preview"
             "rust-src"
           ];
