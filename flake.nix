@@ -12,6 +12,10 @@
         path = ./rust;
         description = "a template for a rust project";
       };
+      templates.haskell = {
+        path = ./haskell;
+        description = "a template for a Haskell project";
+      };
       templates.default = self.templates.basic;
     };
 }
